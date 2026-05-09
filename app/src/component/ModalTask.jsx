@@ -1,9 +1,10 @@
 "use client"
 import { Button, Input, Label, Modal, Surface, TextArea, TextField,Select, FieldError, ListBox } from '@heroui/react';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 const ModalTask = ({p,id}) => {
-    console.log(p.destinationName)
+    console.log(id)
 
     const a = async (e) => {
         e.preventDefault()
@@ -20,6 +21,10 @@ const ModalTask = ({p,id}) => {
         })
         const data = await res.json()
         console.log(data)
+
+        if(data.modifiedCount > 0){
+            redirect(`/destinations`)
+        }
 
     }
 

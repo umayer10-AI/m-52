@@ -1,5 +1,6 @@
 "use client"
 import { XCircle } from 'lucide-react';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 const CencelBtn = ({id}) => {
@@ -10,6 +11,9 @@ const CencelBtn = ({id}) => {
         })
         const data = await res.json()
         console.log(data)
+        if(data.deletedCount > 0){
+            redirect('/destinations')
+        }
     }
 
     return (

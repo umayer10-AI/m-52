@@ -1,11 +1,23 @@
+"use client"
 import { Button, FieldError, Input, Label, ListBox, TextArea,Select, TextField } from '@heroui/react';
 import React from 'react';
 
 const Destination = () => {
+
+    const a = (e) => {
+        e.preventDefault()
+        const formData = new FormData(e.currentTarget)
+        const newUser = Object.fromEntries(formData.entries())
+
+        console.log(newUser)
+
+    }
+
     return (
         <div>
-            <form
-            className="p-10 space-y-8"
+            <h2 className='font-bold text-3xl text-center'>Add Destination</h2>
+            <form onSubmit={a}
+            className="p-10 space-y-8 max-w-3xl mx-auto"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Destination Name */}

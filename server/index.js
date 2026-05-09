@@ -26,10 +26,9 @@ const run = async () => {
         const db = client.db("simpleClud6")
         const userCollection = db.collection("users")
 
-        app.get("/user", async (req,res) => {
-            const cursor = await userCollection.find()
-            const result = await cursor.toArray()
-            res.send(result)
+        app.post("/destination", async (req,res) => {
+            const newUser = req.body
+            console.log(newUser)
         })
 
         await client.db("admin").command({ ping: 1 });

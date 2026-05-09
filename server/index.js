@@ -41,7 +41,7 @@ const run = async () => {
             res.json(result)
         })
 
-        app.post("/destination", async (req,res) => {
+        app.post("/destinations", async (req,res) => {
             const newUser = req.body
             // console.log(newUser)
             const result = await userCollection.insertOne(newUser)
@@ -55,21 +55,21 @@ const run = async () => {
             }
             const m = req.body
 
-            const updateDocument = {
-                $set:{
-                    category: m.category,
-                    country: m.country,
-                    departureDate: m.departureDate,
-                    description: m.description,
-                    destinationName: m.destinationName,
-                    duration: m.duration,
-                    cateimageUrlgory: m.imageUrl,
-                    price: m.price,
-                }
-            }
+            // const updateDocument = {
+            //     $set:{
+            //         category: m.category,
+            //         country: m.country,
+            //         departureDate: m.departureDate,
+            //         description: m.description,
+            //         destinationName: m.destinationName,
+            //         duration: m.duration,
+            //         imageUrl: m.imageUrl,
+            //         price: m.price,
+            //     }
+            // }
 
-            const result = await userCollection.updateOne(filter.updateDocument)
-            console.log(result)
+            // const result = await userCollection.updateOne(filter.updateDocument)
+            console.log(id)
             res.json(result)
         })
 

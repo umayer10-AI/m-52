@@ -11,7 +11,7 @@ const ModalTask = ({p,id}) => {
         const newUser = Object.fromEntries(formData.entries())
         console.log(newUser)
 
-        const res = await fetch(`http://localhost:5000/destination/${id}`,{
+        const res = await fetch(`http://localhost:5000/destinations/${id}`,{
             method: 'PATCH',
             headers: {
                 "content-type":"application/json"

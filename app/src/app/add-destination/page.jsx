@@ -9,7 +9,7 @@ const Destination = () => {
         const formData = new FormData(e.currentTarget)
         const newUser = Object.fromEntries(formData.entries())
 
-        const res = await fetch(`http://localhost:5000/destination`,{
+        const res = await fetch(`http://localhost:5000/destinations`,{
             method: 'POST',
             headers: {
                 "content-type":"application/json"

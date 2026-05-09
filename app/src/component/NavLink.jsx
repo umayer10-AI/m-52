@@ -12,7 +12,7 @@ const NavLink = () => {
             <Link href={'/'} className={p ==="/"?'font-semibold text-green-600':"font-semibold"}>Home</Link>
             <Link href={'/destinations'} className={p ==="/destinations"?'font-semibold text-green-600':"font-semibold"}>Destinations</Link>
             <Link href={'/booking'} className={p ==="/booking"?'font-semibold text-green-600':"font-semibold"}>My Bookings</Link>
-            <Link href={'/admin'} className={p ==="/admin"?'font-semibold text-green-600':"font-semibold"}>Admin</Link>
+            <Link href={'/add-destination'} className={p ==="/add-destination"?'font-semibold text-green-600':"font-semibold"}>Add Destination</Link>
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const Carts = ({v}) => {
@@ -48,9 +49,9 @@ const Carts = ({v}) => {
                           </div>
             
                           {/* Button */}
-                          <button className="text-sky-500 text-lg font-semibold flex items-center gap-2 hover:gap-4 duration-300">
+                          <Link href={`/destinations/${v._id}`} className="text-sky-500 text-lg font-semibold flex items-center gap-2 hover:gap-4 duration-300">
                             BOOK NOW ↗
-                          </button>
+                          </Link>
                         </div>
                       </div>
         </div>

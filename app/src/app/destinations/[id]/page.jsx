@@ -20,7 +20,7 @@ const page = async ({params}) => {
           Back to Destinations
         </button>
         <div className="flex gap-3">
-          <ModalTask p={data}></ModalTask>
+          <ModalTask p={data} id={data._id}></ModalTask>
           <CencelBtn id={data._id}></CencelBtn>
         </div>
       </nav>

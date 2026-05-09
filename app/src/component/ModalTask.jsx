@@ -2,7 +2,7 @@
 import { Button, Input, Label, Modal, Surface, TextArea, TextField,Select, FieldError, ListBox } from '@heroui/react';
 import React from 'react';
 
-const ModalTask = ({p}) => {
+const ModalTask = ({p,id}) => {
     console.log(p.destinationName)
 
     const a = async (e) => {
@@ -11,7 +11,7 @@ const ModalTask = ({p}) => {
         const newUser = Object.fromEntries(formData.entries())
         console.log(newUser)
 
-        const res = await fetch(`http://localhost:5000/destination`,{
+        const res = await fetch(`http://localhost:5000/destination/${id}`,{
             method: 'PATCH',
             headers: {
                 "content-type":"application/json"

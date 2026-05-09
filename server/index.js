@@ -48,6 +48,31 @@ const run = async () => {
             res.send(newUser)
         })
 
+        app.patch('/destinations/:id', async (req,res) => {
+            const id = req.params.id
+            const filter = {
+                _id: new ObjectId(id)
+            }
+            const m = req.body
+
+            const updateDocument = {
+                $set:{
+                    category: m.category,
+                    country: m.country,
+                    departureDate: m.departureDate,
+                    description: m.description,
+                    destinationName: m.destinationName,
+                    duration: m.duration,
+                    cateimageUrlgory: m.imageUrl,
+                    price: m.price,
+                }
+            }
+
+            const result = await userCollection.updateOne(filter.updateDocument)
+            console.log(result)
+            res.json(result)
+        })
+
         app.delete('/destinations/:id', async (req,res) => {
             const id = req.params.id
             const query = {

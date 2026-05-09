@@ -26,9 +26,15 @@ const run = async () => {
         const db = client.db("simpleClud6")
         const userCollection = db.collection("users")
 
+        app.get('/destinations', async (req,res) => {
+            const cursor = await userCollection.find()
+            const result = await cursor.toArray()
+            res.send(result)
+        })
+
         app.post("/destination", async (req,res) => {
             const newUser = req.body
-            console.log(newUser)
+            // console.log(newUser)
             const result = await userCollection.insertOne(newUser)
             res.send(newUser)
         })

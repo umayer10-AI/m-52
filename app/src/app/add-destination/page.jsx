@@ -4,12 +4,20 @@ import React from 'react';
 
 const Destination = () => {
 
-    const a = (e) => {
+    const a = async (e) => {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
         const newUser = Object.fromEntries(formData.entries())
 
-        console.log(newUser)
+        const res = await fetch(`http://localhost:5000/destination`,{
+            method: 'POST',
+            headers: {
+                "content-type":"application/json"
+            },
+            body: JSON.stringify(newUser)
+        })
+        const data = await res.json()
+        console.log(data)
 
     }
 

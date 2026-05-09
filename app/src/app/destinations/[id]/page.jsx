@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Calendar, Star, CheckCircle2, ArrowLeft, Edit3, XCircle, ArrowRight } from 'lucide-react';
 import CencelBtn from '@/component/CencelBtn';
+import ModalTask from '@/component/ModalTask';
 
 const page = async ({params}) => {
 
@@ -19,9 +20,7 @@ const page = async ({params}) => {
           Back to Destinations
         </button>
         <div className="flex gap-3">
-          <button className="flex items-center text-black px-6 py-2 border rounded-md hover:bg-gray-100 transition-colors">
-            <Edit3 className="w-4 h-4 mr-2" /> Edit
-          </button>
+          <ModalTask p={data}></ModalTask>
           <CencelBtn id={data._id}></CencelBtn>
         </div>
       </nav>

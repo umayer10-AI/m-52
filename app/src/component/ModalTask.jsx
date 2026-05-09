@@ -56,7 +56,7 @@ const ModalTask = ({p,id}) => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                           {/* Destination Name */}
                           <div className="md:col-span-2">
-                            <TextField name="destinationName" isRequired>
+                            <TextField name="destinationName" defaultValue={p.destinationName} isRequired>
                               <Label>Destination Name</Label>
                               <Input placeholder="Bali Paradise" className="rounded-2xl" />
                               <FieldError />
@@ -64,7 +64,7 @@ const ModalTask = ({p,id}) => {
                           </div>
             
                           {/* Country */}
-                          <TextField name="country" isRequired>
+                          <TextField name="country" defaultValue={p.country} isRequired>
                             <Label>Country</Label>
                             <Input placeholder="Indonesia" className="rounded-2xl" />
                             <FieldError />
@@ -115,7 +115,7 @@ const ModalTask = ({p,id}) => {
                           </div>
             
                           {/* Price */}
-                          <TextField name="price" type="number" isRequired>
+                          <TextField name="price" type="number" defaultValue={p.price} isRequired>
                             <Label>Price (USD)</Label>
                             <Input
                               type="number"
@@ -126,7 +126,7 @@ const ModalTask = ({p,id}) => {
                           </TextField>
             
                           {/* Duration */}
-                          <TextField name="duration" isRequired>
+                          <TextField name="duration" defaultValue={p.duration} isRequired>
                             <Label>Duration</Label>
                             <Input
                               placeholder="7 Days / 6 Nights"
@@ -137,7 +137,7 @@ const ModalTask = ({p,id}) => {
             
                           {/* Departure Date */}
                           <div className="md:col-span-2">
-                            <TextField name="departureDate" type="date" isRequired>
+                            <TextField name="departureDate" defaultValue={p.departureDate} type="date" isRequired>
                               <Label>Departure Date</Label>
                               <Input type="date" className="rounded-2xl" />
                               <FieldError />
@@ -146,7 +146,7 @@ const ModalTask = ({p,id}) => {
             
                           {/* Image URL - Removed preview */}
                           <div className="md:col-span-2">
-                            <TextField name="imageUrl" isRequired>
+                            <TextField name="imageUrl"  defaultValue={p.imageUrl} isRequired>
                               <Label>Image URL</Label>
                               <Input
                                 type="url"
@@ -159,7 +159,7 @@ const ModalTask = ({p,id}) => {
             
                           {/* Description */}
                           <div className="md:col-span-2">
-                            <TextField name="description" isRequired>
+                            <TextField name="description"  defaultValue={p.description} isRequired>
                               <Label>Description</Label>
                               <TextArea
                                 placeholder="Describe the travel experience..."
